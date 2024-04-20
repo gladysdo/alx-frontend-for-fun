@@ -1,0 +1,22 @@
+
+
+h2 a {
+    position: relative; /* Required for positioning the ::after pseudo-element */
+    text-decoration: none;
+  }
+  
+  h2 a::after {
+    content: ''; /* Required for the pseudo-element to generate content */
+    position: absolute; /* Position relative to the parent <a> element */
+    bottom: -5px; /* Position the line slightly below the text */
+    left: 0; /* Align the line with the start of the <a> element */
+    width: 0; /* Initially set the width of the line to zero */
+    height: 2px; /* Set the height of the line */
+    background: green; /* Color of the line */
+    display: block; /* Ensure the line is displayed as a block element */
+    transition: width 0.2s linear; /* Apply transition effect to the width property */
+  }
+  
+  h2 a:hover::after {
+    width: 100%; /* Scale the line to full width on hover */
+  }
